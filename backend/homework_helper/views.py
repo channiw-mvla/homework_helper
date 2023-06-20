@@ -16,7 +16,6 @@ from rest_framework.response import Response
 # Create your views here.
 class RegisterView(APIView): # reigsters the user
     serializer_class = RegisterSerializer
-    print(User.objects.all())
     def post(self, request):
         serializer = RegisterSerializer(data=request.data) # gets the form data 
         serializer.is_valid(raise_exception=True) # if valid
